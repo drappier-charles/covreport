@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/cancue/covreport/compare/v0.4.0...v0.5.0) (2024-08-06)
+
+
+### Features
+
+* add option to ignore specific packages ([0664ad1](https://github.com/cancue/covreport/commit/0664ad1b1a43f3c24b920b19193f65d08737b52b))
+
 ## [0.4.0](https://github.com/cancue/covreport/compare/v0.3.2...v0.4.0) (2023-10-15)
 
 
