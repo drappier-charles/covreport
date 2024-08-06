@@ -14,7 +14,7 @@ import (
 
 // Report generates a coverage report using the given configuration.
 func Report(cfg *config.Config) error {
-	gp := internal.NewGoProject(cfg.Root, cfg.Cutlines)
+	gp := internal.NewGoProject(cfg.Root, cfg.Cutlines, cfg.Ignores)
 	if err := gp.Parse(cfg.Input); err != nil {
 		return err
 	}
@@ -38,6 +38,7 @@ func NewCLIConfig() (*config.Config, error) {
 	output := flag.String("o", "cover.html", "output file name")
 	cutlines := flag.String("cutlines", "70,40", "cutlines (safe,warning)")
 	root := flag.String("root", ".", "root package name")
+	ignores := flag.String("ignores", "", "ignore packages (comma separated)")
 	flag.Parse()
 
 	parsedCutlines, err := ParseCutlines(*cutlines)
@@ -50,6 +51,7 @@ func NewCLIConfig() (*config.Config, error) {
 		Output:   *output,
 		Cutlines: parsedCutlines,
 		Root:     *root,
+		Ignores:  ParseIgnores(*ignores),
 	}, nil
 }
 
@@ -69,4 +71,12 @@ func ParseCutlines(cutlines string) (*config.Cutlines, error) {
 		Safe:    safe,
 		Warning: warning,
 	}, nil
+}
+
+// ParseIgnores parses the ignores argument.
+func ParseIgnores(ignores string) []string {
+	if ignores == "" {
+		return nil
+	}
+	return strings.Split(ignores, ",")
 }

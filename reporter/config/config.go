@@ -7,6 +7,7 @@ type Config struct {
 	Output   string
 	Root     string
 	Cutlines *Cutlines
+	Ignores  []string
 }
 
 // Cutlines represents the values for safe, warning and danger.

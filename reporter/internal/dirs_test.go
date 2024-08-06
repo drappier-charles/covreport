@@ -56,7 +56,7 @@ func TestGoListItemPercent(t *testing.T) {
 }
 
 func TestSafeDir(t *testing.T) {
-	gp := NewGoProject("a", nil)
+	gp := NewGoProject("a", nil, nil)
 	a := gp.SafeDir("a")
 	assert.Equal(t, gp.Root(), a)
 	assert.NotEqual(t, a, gp.SafeDir("."))
@@ -80,7 +80,7 @@ func TestSafeDir(t *testing.T) {
 }
 
 func TestAggregate(t *testing.T) {
-	gp := NewGoProject(".", nil)
+	gp := NewGoProject(".", nil, nil)
 	a := gp.Root()
 	a.AddFile(&GoFile{
 		GoListItem: &GoListItem{
@@ -159,7 +159,7 @@ func TestGoProject_Parse(t *testing.T) {
 			_, err = temp.WriteString(tt.input)
 			assert.NoError(t, err)
 
-			gp := NewGoProject(curPkg, nil)
+			gp := NewGoProject(curPkg, nil, nil)
 			err = gp.Parse(input)
 			assert.NoError(t, err)
 

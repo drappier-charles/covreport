@@ -9,11 +9,12 @@ import (
 	"golang.org/x/tools/cover"
 )
 
-func NewGoProject(root string, cutlines *config.Cutlines) *GoProject {
+func NewGoProject(root string, cutlines *config.Cutlines, ignores []string) *GoProject {
 	return &GoProject{
 		Dirs:     make(map[string]*GoDir),
 		RootPath: root,
 		Cutlines: cutlines,
+		Ignores:  ignores,
 	}
 }
 
@@ -21,6 +22,7 @@ type GoProject struct {
 	Dirs     map[string]*GoDir
 	RootPath string
 	Cutlines *config.Cutlines
+	Ignores  []string
 }
 
 // Parse parses the input profiles filename and updates the GoProject's coverage report.
@@ -35,7 +37,14 @@ func (gp *GoProject) Parse(input string) error {
 		return err
 	}
 
+PROFILE_LOOP:
 	for _, profile := range profiles {
+		for _, ignore := range gp.Ignores {
+			if strings.HasPrefix(profile.FileName, ignore) {
+				continue PROFILE_LOOP
+			}
+		}
+
 		dir := gp.SafeDir(filepath.Dir(profile.FileName))
 		var file *GoFile
 		for _, f := range dir.Files {

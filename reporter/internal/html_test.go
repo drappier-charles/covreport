@@ -14,7 +14,7 @@ import (
 
 func TestReport(t *testing.T) {
 	t.Run("should return error when cannot read file", func(t *testing.T) {
-		gp := NewGoProject("/", &config.Cutlines{Safe: 70, Warning: 40})
+		gp := NewGoProject("/", &config.Cutlines{Safe: 70, Warning: 40}, nil)
 		file := &GoFile{GoListItem: NewGoListItem("not-exist.go")}
 		gp.Root().AddFile(file)
 		err := gp.Report(nil)

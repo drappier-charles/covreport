@@ -50,6 +50,21 @@ func TestParseCutlines(t *testing.T) {
 	})
 }
 
+func TestParseIgnores(t *testing.T) {
+	t.Run("should return nil with empty string", func(t *testing.T) {
+		ignores := reporter.ParseIgnores("")
+		assert.Nil(t, ignores)
+	})
+
+	t.Run("should work", func(t *testing.T) {
+		ignores := reporter.ParseIgnores("example.txt,foobar,/.tmp")
+		assert.Equal(t, 3, len(ignores))
+		assert.Equal(t, "example.txt", ignores[0])
+		assert.Equal(t, "foobar", ignores[1])
+		assert.Equal(t, "/.tmp", ignores[2])
+	})
+}
+
 func TestNewCLIConfig(t *testing.T) {
 	t.Run("should have valid default values", func(t *testing.T) {
 		cfg, err := reporter.NewCLIConfig()
