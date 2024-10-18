@@ -234,12 +234,14 @@ const templateHTML = `
 		<style>
 			body {
 				font-family: Menlo, monospace;
+				background-color: #1e1e1e;
+				color: #cfcfcf;
 			}
 			a {
 				text-decoration: none;
-				color: blue;
+				color: #4d9fff;
 				&:visited {
-					color: blue;
+					color: #4d9fff;
 				}
 			}
 			progress {
@@ -257,23 +259,24 @@ const templateHTML = `
 			.view .links a:not(:first-child):not(:last-child) {
 				&::after {
 					content: "/";
-					color: black;
+					color: #888;
 				}
 			}
 			.view .links a:first-child {
-				border: 1px solid gray;
+				border: 1px solid #555;
 				border-radius: 4px;
-				background-color: lightgray;
+				background-color: #3a3a3a;
+				color: #cfcfcf;
 				padding: 2px 4px;
 			}
 			.view .links *:nth-child(2) {
 				&::before {
 					content: "/";
-					color: black;
+					color: #888;
 				}
 			}
 			.view .links span {
-				color: black;
+				color: #cfcfcf;
 				font-weight: bold;
 			}
 			.view .summary {
@@ -287,11 +290,13 @@ const templateHTML = `
 			}
 			.view .summary .label {
 				opacity: 0.8;
+				color: #cfcfcf;
 			}
 			.view .summary .stmts {
-				border: 1px solid gray;
+				border: 1px solid #555;
 				border-radius: 4px;
-				background-color: lightgray;
+				background-color: #3a3a3a;
+				color: #cfcfcf;
 				padding: 2px 4px;
 			}
 			.lines {
@@ -311,23 +316,26 @@ const templateHTML = `
 				padding-right: 4px;
 			}
 			.lines .line-number {
-				opacity: 0.8;
+				opacity: 0.6;
+				color: #cfcfcf;
 			}
 			.lines .covered-count {
-				background-color: lightgray;
+				background-color: #3a3a3a;
+				color: #cfcfcf;
 			}
 			.lines pre {
 				margin: 0;
 				font-size: 1em;
 				line-height: 1.5em;
 				height: 1.5em;
+				color: #cfcfcf;
 			}
 			.lines .uncovered {
-				background-color: rgba(255, 0, 0, 0.2);
+				background-color: rgba(255, 0, 0, 0.4);
 			}
 			.lines .covered-count.covered {
-				background-color: rgba(0, 255, 0, 0.2);
-				color: green;
+				background-color: rgba(0, 255, 0, 0.4);
+				color: #00ff00;
 			}
 			.items {
 				margin: 0 1rem 3rem 1rem;
@@ -338,15 +346,15 @@ const templateHTML = `
 			.items .wrapper > * {
 				padding: 8px 1rem;
 				&:not(:first-child) {
-					color: black;
+					color: #cfcfcf;
 				}
 			}
 			.items .wrapper.danger > * {
-				background-color: rgba(255, 0, 0, 0.2);
+				background-color: rgba(255, 0, 0, 0.4);
 				--accent-color: red;
 			}
 			.items .wrapper.safe > * {
-				background-color: rgba(0, 255, 0, 0.2);
+				background-color: rgba(0, 255, 0, 0.4);
 				--accent-color: green;
 			}
 			.items .wrapper.warning > * {
@@ -354,33 +362,34 @@ const templateHTML = `
 				--accent-color: orange;
 			}
 			progress {
-				border: 1px solid black;
-			  &::-webkit-progress-value {
+				border: 1px solid #888;
+				&::-webkit-progress-value {
 					background-color: var(--accent-color);
 				}
-			  &::-moz-progress-value {
+				&::-moz-progress-value {
 					background-color: var(--accent-color);
 				}
-			  &::-progress-value {
+				&::-progress-value {
 					background-color: var(--accent-color);
 				}
-			  &::-webkit-progress-bar {
-					background-color: white;
+				&::-webkit-progress-bar {
+					background-color: #333;
 				}
-			  &::-moz-progress-bar {
-					background-color: white;
+				&::-moz-progress-bar {
+					background-color: #333;
 				}
-			  &::-progress-bar {
-					background-color: white;
+				&::-progress-bar {
+					background-color: #333;
 				}
 			}
 			.items .wrapper {
 				display: contents;
 				text-align: right;
-				border: 1px solid lightgray;
+				border: 1px solid #555;
 			}
 			.items .wrapper .subpath {
 				text-align: left;
+				color: #cfcfcf;
 			}
 		</style>
 	</head>
