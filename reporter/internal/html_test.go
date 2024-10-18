@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/cancue/covreport/reporter/config"
+	"github.com/drappier-charles/covreport/reporter/config"
 	"github.com/stretchr/testify/assert"
 	"golang.org/x/tools/cover"
 )

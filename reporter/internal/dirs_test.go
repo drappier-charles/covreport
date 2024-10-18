@@ -110,7 +110,7 @@ func TestAggregate(t *testing.T) {
 }
 
 func TestGoProject_Parse(t *testing.T) {
-	curPkg := "github.com/cancue/covreport/reporter/internal"
+	curPkg := "github.com/drappier-charles/covreport/reporter/internal"
 	tests := []struct {
 		name        string
 		input       string

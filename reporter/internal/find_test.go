@@ -14,7 +14,7 @@ func TestFind(t *testing.T) {
 	_, curFilename, _, ok := runtime.Caller(0)
 	assert.True(t, ok)
 	curDir := filepath.Dir(curFilename)
-	curPkg := "github.com/cancue/covreport/reporter/internal"
+	curPkg := "github.com/drappier-charles/covreport/reporter/internal"
 	curFileURI := fmt.Sprintf("%s/%s", curPkg, filepath.Base(curFilename))
 
 	var pkgs map[string]*Pkg

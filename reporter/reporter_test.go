@@ -3,7 +3,7 @@ package reporter_test
 import (
 	"testing"
 
-	"github.com/cancue/covreport/reporter"
+	"github.com/drappier-charles/covreport/reporter"
 	"github.com/stretchr/testify/assert"
 )
 

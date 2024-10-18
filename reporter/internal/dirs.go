@@ -4,7 +4,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/cancue/covreport/reporter/config"
+	"github.com/drappier-charles/covreport/reporter/config"
 	"github.com/google/uuid"
 	"golang.org/x/tools/cover"
 )

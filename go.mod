@@ -1,4 +1,4 @@
-module github.com/cancue/covreport
+module github.com/drappier-charles/covreport
 
 go 1.21.0
 

@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/cancue/covreport/reporter"
+	"github.com/drappier-charles/covreport/reporter"
 )
 
 func main() {

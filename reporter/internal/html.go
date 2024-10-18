@@ -8,7 +8,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/cancue/covreport/reporter/config"
+	"github.com/drappier-charles/covreport/reporter/config"
 )
 
 // Report generates an HTML report of the GoProject and writes it to the provided io.Writer.

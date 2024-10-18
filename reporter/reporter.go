@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/cancue/covreport/reporter/config"
-	"github.com/cancue/covreport/reporter/internal"
+	"github.com/drappier-charles/covreport/reporter/config"
+	"github.com/drappier-charles/covreport/reporter/internal"
 )
 
 // Report generates a coverage report using the given configuration.
